@@ -1,12 +1,14 @@
-FROM jjanzic/docker-python3-opencv:latest
+FROM python:3.6.5-alpine
 
+RUN apt-get update
+RUN apt-get install libgl1-mesa-glx
 RUN pip3 install --upgrade pip 
 
 WORKDIR /
 COPY . /
 RUN pip3 --no-cache-dir install -r requirements.txt
-RUN pip install --upgrade numpy # added by madhu
-RUN pip install winsound # added by madhu
+# RUN pip install --upgrade numpy # added by madhu
+#RUN pip install winsound # added by madhu
 
 EXPOSE 5000
 

@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-import winsound
+#import winsound
 import time
 #from location import loc, record
 
@@ -60,7 +60,8 @@ class VideoCamera(object):
                     cv2.putText(frame, f'FPS: {fps}', (24, 30), font, 1.4, (55, 255, 255), 2)
                     ret, jpeg = cv2.imencode('.jpg', frame)
                     if label == 'pothole':
-                        winsound.PlaySound('beep.wav',winsound.SND_ASYNC)
+                        # winsound.PlaySound('beep.wav',winsound.SND_ASYNC)
+                        print("\nlabel is pothole!!!!\n")
                     #record()
                     return jpeg.tobytes()
             except:
